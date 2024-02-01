@@ -9,7 +9,6 @@ palabras = frase.split()
 frase_t = ''
 for palabra in palabras:
     
-    
     if palabra[-1] == 'o': 
         palabra = list(palabra)
         palabra[-1] = 'e'
