@@ -5,9 +5,24 @@
 NotaFinal = 0.6 * NotaParcial /10 + 0.2 * NotaTP1 + 0.2 * NotaTP2 + SI (PromedioTP >= 8) ENTONCES 1 SINO 0 
 
 
-### Bibliografia 
+## Temas
+
+- #### Lenguaje de programacion para trabajar en nuestros proyectos (Python)
+
+- #### Etapas de un proyecto de Ciencias de Datos 
+
+- #### Modelado de Datos
+
+- #### Modelo Relacional
+
+- #### Algebra Relacional
+
+
+<details>
+<summary><i><b><h2>Bibliografia</h2></b></i></summary>
+
 - Elements of Statistical Learning
-  - https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf
+    - https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf
 
 - Introduction to Machine Learning
     - https://kkpatel7.files.wordpress.com/2015/04/alppaydin_machinelearning_2010.pdf
@@ -17,3 +32,5 @@ NotaFinal = 0.6 * NotaParcial /10 + 0.2 * NotaTP1 + 0.2 * NotaTP2 + SI (Promedio
 
 - Fundamentals of Database Systems
     - https://amirsmvt.github.io/Database/Static_files/Fundamental_of_Database_Systems.pdf
+
+</details>

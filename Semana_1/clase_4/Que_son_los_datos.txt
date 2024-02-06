@@ -1,0 +1,10 @@
+
+
+Datos -> Procesamiento -> Informacion
+
+Un dato es una representación simbólica (numérica, alfabética, algorítmica, espacial, etc.) de un atributo o variable cuantitativa o cualitativa. 
+Los datos describen hechos empíricos, sucesos y entidades. 
+Es un valor o referente que recibe el computador por diferentes medios, los datos representan la información que el programador manipula en la construcción de una solución o en el desarrollo de un algoritmo.
+
+En el uso común, como en estadística, el dato puede hacer referencia a una colección o un conjunto de valores discretos o continuos, que contienen, cuantifican o categorizan la información de algún modo o en alguna forma 
+(como se indicaba anteriormente, confiriéndose una representación simbólica, y cuya unidad de información es el bit).
