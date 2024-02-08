@@ -109,9 +109,32 @@
 
 ## AR - CARTESIAN PRODUCT / JOIN
 
-- **Funcion**
+- **Funcion** produce una nueva relacion que combina cada tupla de una relacion con cada una de las tuplas de la otra relacion
 
-- **Notacion**
+- **Notacion** $ R X S $
+
+
+
+### Propiedades
+
+- **Union compatible** las relaciones no tienen que ser union compatibles
+
+- **Grado**. $$
+
+- **# tuplas**. 
+
+- **Conmutatividad**
+
+- Cascada de SELECTs
+
+- SQL Croos
+
+
+## AR - JOIN
+
+- **Funcion** Permite combinar pares de tuplas relacionadas entre dos relaciones
+
+- **Notacion** 
 
 ### Propiedades
 
