@@ -11,7 +11,7 @@ print("EJERCICIO 1\n")
 Añadir descripcion 
 """
 
-def leer_parque():
+def func1():
     pass
 
 print("\n")
@@ -24,7 +24,7 @@ print("EJERCICIO 2\n")
 Añadir descripcion 
 """
 
-def especies():
+def func2():
     pass
 
 print("\n")
@@ -37,7 +37,7 @@ print("EJERCICIO 3\n")
 Añadir descripcion 
 """
 
-def contar_ejemplares():
+def func3():
     pass
 
 print("\n")
@@ -50,7 +50,7 @@ print("EJERCICIO 4\n")
 Añadir descripcion 
 """
 
-def obtener_alturas():
+def func4():
     pass
 
 print("\n")
@@ -63,7 +63,7 @@ print("EJERCICIO 5\n")
 Añadir descripcion 
 """
 
-def obtener_inclinaciones():
+def func5():
     pass
 
 print("\n")
@@ -76,7 +76,7 @@ print("EJERCICIO 6\n")
 Añadir descripcion 
 """
 
-def especimen_mas_inclinada():
+def func6():
     pass
 
 print("\n")
@@ -89,7 +89,37 @@ print("EJERCICIO 7\n")
 Añadir descripcion 
 """
 
-def especimen_promedio_mas_inclinada():
+def func7():
     pass
 
 print("\n")
+#---------------
+# Ejercio 8
+#---------------
+print("EJERCICIO 8\n")
+
+"""
+Añadir descripcion 
+"""
+
+def func8():
+    pass
+
+print("\n")
+#---------------
+# Ejercio 9
+#---------------
+print("EJERCICIO 9\n")
+
+"""
+Añadir descripcion 
+"""
+
+def func9():
+    pass
+
+print("\n")
+#---------------
+# Ejercio 10
+#---------------
+

@@ -1,4 +1,3 @@
-`
 
 #---------------
 # Ejercio 1
@@ -98,8 +97,14 @@ print("EJERCICIO 5")
 Deﬁnir una función dos_pertenece(lista) que tome una lista de enteros y
 devuelva True si la lista tiene al 2 y False en caso contrario.
 """
-def dos_pertenece(lista:list):
-    pass
+def dos_pertenece(lista:list)-> bool:
+    if 2 in lista:
+        return True
+    else: 
+        return False
+
+print(dos_pertenece([2,3,4]))     
+print(dos_pertenece([5,3,4]))          
 #---------------
 # Ejercio 6
 #---------------
@@ -111,7 +116,13 @@ elemento, y devuelva True si la lista tiene al elemento dado y False en caso
 contrario
 """
 def pertenece(lista:list, elem):
-    pass
+    if elem in lista:
+        return True
+    else: 
+        return False
+
+print(pertenece([2,34,3], 3))
+print(pertenece([2,34,3], 4))
 #---------------
 # Ejercio 7
 #---------------
@@ -121,8 +132,11 @@ print("EJERCICIO 7")
 Deﬁnir una función mas_larga(lista1, lista2) que tome dos listas y
 devuelva la más larga.
 """
-def mas_larga(lista1:list, lista2:list):
-    pass
+def mas_larga(lista1:list, lista2:list)-> list:
+    if len(lista1) >= len(lista2):
+        return lista1
+    else: 
+        return lista2
 #---------------
 # Ejercio 8
 #---------------
@@ -131,8 +145,16 @@ print("EJERCICIO 8")
 Deﬁnir una función cant_e que tome una lista de caracteres y devuelva la
 cantidad de letras 'e' que tiene la misma.
 """
-def cant_e():
-    pass
+def cant_e(lista1:list)-> int:
+    count = 0
+    for i in lista1:
+        if i == 'e':
+            count += 1
+        else:
+            pass
+    return count    
+    
+print(cant_e(['e','w','e']))
 #---------------
 # Ejercio 9
 #---------------
@@ -142,8 +164,12 @@ print("EJERCICIO 9")
 Deﬁnir una función sumar_unos que tome una lista de enteros, les sume 1 a
 todos sus elementos, y devuelva la misma lista, pero modiﬁcada.
 """
-def sumar_unos():
-    pass
+def sumar_unos(lista:list)-> list:
+    for i in range(len(lista)):
+        lista[i] += 1
+    return lista
+
+print(sumar_unos([1,2,3]))
 #---------------
 # Ejercio 10
 #---------------
