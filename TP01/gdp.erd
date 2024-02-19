@@ -11,15 +11,12 @@ entity PAIS {
     iso: INT key
     nombre: VARCHAR(20)
     PBI: DOUBLE
+    region: CHAR
 }
 
 entity SECCION {
     id: INT key
-}
-
-entity REGION {
-    id: INT key
-    nombre: VARCHAR(20)
+    seccion: CHAR
 }
 
 entity RED_SOCIAL {
@@ -36,7 +33,4 @@ relationship utiliza {
 }
 relationship posee {
    SEDE[N] -> SECCION[N]
-}
-relationship se_ubica_en {
-   PAIS[N] -> REGION[N]
 }
