@@ -1,0 +1,42 @@
+erdiagram Model
+notation=crowsfoot
+
+entity SEDE {
+    id: INT key
+    ciudad: VARCHAR(20)
+    descripcion: VARCHAR(20)
+}
+
+entity PAIS {
+    iso: INT key
+    nombre: VARCHAR(20)
+    PBI: DOUBLE
+}
+
+entity SECCION {
+    id: INT key
+}
+
+entity REGION {
+    id: INT key
+    nombre: VARCHAR(20)
+}
+
+entity RED_SOCIAL {
+    id: INT key
+    url: VARCHAR(20)
+    nombre_red: VARCHAR(20)
+}
+
+relationship pertenece_a {
+   SEDE[N] -> PAIS[N]
+}
+relationship utiliza {
+   SEDE[N] -> RED_SOCIAL[N]
+}
+relationship posee {
+   SEDE[N] -> SECCION[N]
+}
+relationship se_ubica_en {
+   PAIS[N] -> REGION[N]
+}
