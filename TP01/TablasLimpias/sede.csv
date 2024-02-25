@@ -1,0 +1,163 @@
+Id,Descripcion,Iso,Ciudad
+CALEG,Consulate  General  in  PORTO  ALEGRE,BRA,Porto  Alegre
+CANTO,Consulate  in  ANTOFAGASTA,CHL,Antofagasta
+CAREN,Consulate  General  in  Punta  Arenas,CHL,Punta  Arenas
+CASUN,Consulate  General  in  Asuncion,PRY,Asuncion
+CATLA,Consulate  General  in  Atlanta,USA,Atlanta
+CBARC,Consulate  General  and  Promotion  Center  in  Barcelona,ESP,Barcelona
+CBEIJ,Consular  Section  in  Beijing,CHN,Beijing
+CBELO,Consulate  in  Belo  Horizonte,BRA,Belo  Horizonte
+CBONN,Consulate  in  Bonn,DEU,Bonn
+CCADI,Consulate  in  Cadiz,ESP,Cadiz
+CCEST,Consulate  General  in  Ciudad  del  Este,PRY,Ciudad  del  Este
+CCHIC,Consulate  General  in  Chicago,USA,Chicago
+CCOCH,Consulate  in  Cochabamba,BOL,Cochabamba
+CCOLO,Consulate  in  Colonia,URY,Colonia
+CCONC,Consulate  in  Concepcion,CHL,Concepcion
+CCURI,Consulate  in  Curitiba,BRA,Curitiba
+CENCA,Consulate  General  in  Encarnacion,PRY,Encarnacion
+CFBEN,Consulate  in  Fray  Bentos,URY,Fray  Bentos
+CFDIG,Consulate  in  Foz  do  Iguacu,BRA,Foz  do  Iguacu
+CFLOR,Consulate  in  Florianopolis,BRA,Florianopolis
+CFRAN,Consulate  General  and  Promotion  Center  in  Frankfurt,DEU,Frankfurt
+CGEST,Consulate  General  and  Promotion  Center  in  Istambul,TUR,Istambul
+CGMUM,Consulate  General  and  Promotion  Center  in  Mumbai,IND,Mumbai
+CGPAZ,Consulate  General  in  La  Paz,BOL,La  Paz
+CGTEL,Consulate  General  in  Tel  Aviv,ISR,Tel  Aviv
+CGUAN,Consulate  General  in  Guangzhou,CHN,Guangzhou
+CGUAY,Consulate  in  Guayaquil,ECU,Guayaquil
+CGVAN,Consulate  General  in  Vancouver,CAN,Vancouver
+CHAMB,Consulate  General  in  Hamburg,DEU,Hamburg
+CHONG,Consulate  General  in  Hong  Kong,CHN,Hong  Kong
+CHOUS,Consulate  General  in  Houston,USA,Houston
+CJOHA,Consulate  General  in  Johannesburg,ZAF,Johannesburg
+CLANG,Consulate  General  and  Promotion  Center  in  Los  Angeles,USA,Los  Angeles
+CLIMA,Consulate  General  in  Lima,PER,Lima
+CLOND,Consulate  General  in  London,GRB,London  
+CMADR,Consulate  General  in  Madrid,ESP,Madrid
+CMALD,Consulate  in  Maldonado,URY,Maldonado
+CMALL,Consulate  in  Palma,ESP,Palma
+CMDEO,Consulate  General  in  Montevideo,URY,Montevideo
+CMEXI,Consulate  General  in  Mexico,MEX,Mexico
+CMIAM,Consulate  General  and  Promotion  Center  in  Miami,USA,Miami
+CMILA,Consulate  General  and  Promotion  Center  in  Milan,ITA,Milan
+CMREA,Consulate  General  in  Montreal,CAN,Montreal
+CNYOR,Consulate  General  and  Promotion  Center  in  New  York,USA,New  York
+CPABL,Consulate  General  and  Promotion  Center  in  Sao  Paolo,BRA,Sao  Paolo
+CPAYS,Consulate  in  Paysandu,URY,Paysandu
+CPCAR,Consulate  in  Playa  del  Carmen,MEX,Playa  del  Carmen
+CPMON,Consulate  in  Puerto  Montt,CHL,Puerto  Montt
+CRECI,Consulate  in  Recife,BRA,Recife
+CRIOJ,Consulate  General  in  Rio  de  Janeiro,BRA,Rio  de  Janeiro
+CROMA,Consulate  General  in  Rome,ITA,Rome
+CSBAH,Consulate  in  Sao  Salvador  de  Bahia,BRA,Sao  Salvador  de  Bahia
+CSCRS,Consulate  General  and  Promotion  Center  in  Santa  Cruz,BOL,Santa  Cruz
+CSHAN,Consulate  General  and  Promotion  Center  in  Shangai,CHN,Shanghái
+CSIDN,Consulate  General  in  Sydney,AUS,Sydney
+CSIGO,Consulate  General  in  Santiago,CHL,Santiago
+CSLTO,Consulate  in  Salto,URY,Salto
+CTARI,Consulate  General  in  Tarija,BOL,Tarija
+CTENE,Consulate  in  Tenerife,ESP,Tenerife
+CTORO,Consulate  General  in  Toronto,CAN,Toronto
+CURUG,Consulate  in  Uruguayana,BRA,Uruguayana
+CVALP,Consulate  General  in  Valparaiso,CHL,Valparaiso
+CVIGO,Consulate  General  in  Vigo,ESP,Vigo
+CVILL,Consulate  in  Villazon,BOL,Villazon
+CYACU,Consulate  in  Yacuiba,BOL,Yacuiba
+DIGAC,Argentines  abroad,ARG,Argentines  abroad
+EALEM,Embassy  in  GERMANY,DEU,Berlin
+EANGO,Embassy  in  Angola,AGO,Luanda  
+EARAB,Embassy  in  Saudi  Arabia,SAU,Riyad
+EARGE,Embassy  in  Algeria,DZA,Algiers
+EARME,Embassy  in  Armenia,ARM,Yerevan
+EASIR,Embassy  in  Syria,SYR,Damasco
+EAUST,Embassy  in  Australia,AUS,Canberra
+EAZER,Embassy  in  Azerbaijan,AZE,Baku
+EBANG,Embassy  in  Bangladesh,BGD,Daca
+EBARB,Embassy  in  Barbados,BRB,Bridgetown
+EBELG,Embassy  in  Belgium,BEL,Brussels
+EBOLV,Embassy  in  Bolivia,BOL,La  Paz
+EBRAS,Embassy  in  Brazil,BRA,Brasilia
+EBULG,Embassy  in  Bulgaria,BGR,Sofia
+ECANA,Embassy  in  Canada,CAN,Ottawa
+ECEUR,Embassy  to  the  European  Union,BEL,Brussels
+ECHES,Embassy  in  Czechia,CZE,Prague
+ECHIN,Embassy  in  China,CHN,Beijing
+ECOLO,Embassy  in  Colombia,COL,Bogota
+ECORE,Embassy  in  South  Korea,KOR,Seoul
+ECUBA,Embassy  in  Cuba,CUB,Havanna
+EDINA,Embassy  in  Danmark,DNK,Copenhagen
+EDOMI,Embassy  in  Dominican  Republic,DOM,Santo  Domingo
+EEARB,Embassy  in  the  United  Arab  Emirates,ARE,Abu  Dhabi
+EECUA,Embassy  in  Ecuador,ECU,Quito
+EEEUU,Embassy  in  United  States,USA,Washington
+EEGIP,Embassy  in  Egypt,EGY,El  Cairo
+EEOEA,Permanent  Mission  to  the  Organization  of  American  States,USA,Washington
+EESPA,Embassy  in  Spain,ESP,Madrid
+EETIO,Embassy  in  Ethiopia,ETH,Addis  Ababa
+EFILI,Embassy  in  the  Philippines,PHL,Manila
+EFINL,Embassy  in  Finland,FIN,Helsinki
+EFRAN,Embassy  in  France,FRA,Paris
+EFRUS,Embassy  in  Russia,RUS,Moscow
+EGREC,Embassy  in  Greece,GRC,Athens
+EGUAT,Embassy  in  Guatemala,GTM,Guatemala
+EGUYA,Embassy  in  Guyana,GUY,Georgetown
+EHAIT,Embassy  in  Haiti,HTI,Port-au-Prince
+EHILE,Embassy  in  Chile,CHL,Santiago
+EHOND,Embassy  in  Honduras,HND,Tegucigalpa
+EINDI,Embassy  in  India,IND,New  Delhi
+EIRAN,Embassy  in  Iran,IRN,Teheran
+EIRLA,Embassy  in  Irlanda,IRL,Dublin
+EISIA,Embassy  in  Indonesia,IDN,Jakarta
+EISRA,Embassy  in  Israel,ISR,Tel  Aviv
+EITAL,Embassy  in  Italy,ITA,Rome
+EJAMA,Embassy  in  Jamaica,JAM,Kingston
+EJAPO,Embassy  in  Japan,JPN,Tokyo
+EKENY,Embassy  in  Kenya,KEN,Nairobi
+EKUWA,Embassy  in  Kuwait,KWT,Kuwait
+ELBIA,Embassy  in  Libya,LBY,Tripoli
+ELBNO,Embassy  in  Lebanon,LBN,Beirut
+EMARR,Embassy  in  Morocco,MAR,Rabat
+EMEXI,Embassy  in  Mexico,MEX,Mexico
+EMFAO,Permanent  Mission  to  the  United  Nations  Organisation  for  Food  and  Agriculture,ITA,Rome
+EMOZA,Embassy  in  Mozambique,MOZ,Maputo
+EMSIA,Embassy  in  Malaysia,MYS,Kuala  Lumpur
+EMSUR,Permanent  Mission  for  MERCOSUR  and  ALADI,URY,Montevideo
+ENAUN,Permanent  Mission  to  the  United  Nations,USA,New  York
+ENICA,Embassy  in  Nicaragua,NIC,Managua
+ENIGE,Embassy  in  Nigeria,NGA,Abuja
+ENORU,Embassy  in  Norway,NOR,Oslo
+ENZEL,Embassy  in  New  Zeland,NZL,Wellington
+EOIRS,Permanent  Mission  to  the  International  Organisations  in  Geneve,CHE,Ginebra
+EPAKI,Embassy  in  Pakistan,PAK,Islamabad
+EPARA,Embassy  in  Paraguay,PRY,Asuncion
+EPBAJ,Embassy  in  Netherlands,NLD,The  Hague
+EPERU,Embassy  in  Peru,PER,Lima
+EPNMA,Embassy  in  Panama,PAN,Panama
+EPOLO,Embassy  in  Poland,POL,Warsaw
+EPORT,Embassy  in  Portugal,PRT,Lisbon
+EQATR,Embassy  in  Qatar,QAT,Doha
+ERICA,Embassy  in  Costa  Rica,CRI,San  Jose
+ERUMA,Embassy  in  Romania,ROU,Bucarest
+ERUNI,Embassy  in  United  Kingdom,GRB,London  
+ESAFR,Embassy  in  South  Africa,ZAF,Pretoria
+ESALV,Embassy  in  El  Salvador,SLV,San  Salvador
+ESENE,Embassy  in  Senegal,SEN,Dakar
+ESERB,Embassy  in  Serbia,SRB,Belgrad
+ESING,Embassy  in  Singapore,SGP,Singapore
+ESSED,Representation  to  the  Holy  See,VAT,Rome
+ESUEC,Embassy  in  Sweden,SWE,Stockholm
+ESUIZ,Embassy  in  Switzerland,CHE,Bern
+ESURI,Embassy  in  Suriname,SUR,Paramaribo
+ETAIL,Embassy  in  Thailand,THA,Bangkok
+ETRIA,Embassy  in  Austria,AUT,Viena
+ETRIN,Embassy  in  Trinidad  and  Tobago,TTO,Port  of  Spain
+ETUNE,Embassy  in  Tunisia,TUN,Tunisia
+ETURQ,Embassy  in  Türkiye,TUR,Ankara
+EUCRA,Embassy  in  Ukraine,UKR,Kiev
+EUNES,"Permanent  Delegation  to  the  United  Nations  Educational, Scientific  and  Cultural  Organization",FRA,Paris
+EUNGR,Embassy  in  Hungary,HUN,Budapest
+EURUG,Embassy  in  Uruguay,URY,Montevideo
+EVENE,Embassy  in  Venezuela,VEN,Caracas
+EVIET,Embassy  in  Vietnam,VNM,Hanoi
+REPAL,Representation  Office  in  the  State  of  Palestine,PSE,Ramallah
