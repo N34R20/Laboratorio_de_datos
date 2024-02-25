@@ -2,27 +2,27 @@ erdiagram Model
 notation=crowsfoot
 
 entity SEDE {
-    id: INT key
-    ciudad: VARCHAR(20)
-    descripcion: VARCHAR(20)
+    Id: VARCHAR(20) key
+    Descripcion: VARCHAR(20)
+    Id_pais: VARCHAR(20)
 }
 
 entity PAIS {
-    iso: INT key
-    nombre: VARCHAR(20)
+    Id_pais: INT key
+    Nombre: VARCHAR(20)
     PBI: DOUBLE
-    region: CHAR
+    Region: CHAR
 }
 
 entity SECCION {
-    id: INT key
-    seccion: CHAR
+    Id_sede: INT key
+    Seccion: CHAR
 }
 
 entity RED_SOCIAL {
-    id: INT key
-    url: VARCHAR(20)
-    nombre_red: VARCHAR(20)
+    Id: INT key
+    Url: VARCHAR(20)
+    Nombre_red: VARCHAR(20)
 }
 
 relationship pertenece_a {
