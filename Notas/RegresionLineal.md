@@ -59,11 +59,11 @@ Cuantificando la varianza
 
 - La variabilidad TOTAL del modelo puede separarse en EXPLICADA y NO EXPLICADA
 
-  - Variabilidad total: $\sum_{i=1}^{n}(Y_i - Y)^2$
+  - Variabilidad total: $ \sum\_{i=1}^{n}(Y_i - Y)^2$
 
-  - Variabilidad no explicada: $\sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2$
+  - Variabilidad no explicada: $ \sum\_{i=1}^{n}(Y_i - \hat{Y}\_i)^2$
 
-  - Variabilidad explicada: $\sum_{i=1}^{n}(\hat{Y}_i - Y)^2$
+  - Variabilidad explicada: $ \sum\_{i=1}^{n}(\hat{Y}\_i - Y)^2$
 
 - Coeficiente de determinacion (R^2): Mide la proporcion de variabilidad de la variable respuesta explicada por variaciones en x, es decir por el modelo de regresion
 
