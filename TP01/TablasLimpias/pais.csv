@@ -1,6 +1,5 @@
 Pais,Id_pais,PBI,Region
 Aruba,ABW,33300.8388187011,Latin America & Caribbean
-Afghanistan,AFG,,South Asia
 Angola,AGO,3000.44423053173,Sub-Saharan Africa
 Albania,ALB,6810.11404104233,Europe & Central Asia
 Andorra,AND,41992.7727779758,Europe & Central Asia
@@ -28,12 +27,10 @@ Bolivia,BOL,3600.12163486427,Latin America & Caribbean
 Brazil,BRA,8917.67491057495,Latin America & Caribbean
 Barbados,BRB,20238.7842420154,Latin America & Caribbean
 Brunei Darussalam,BRN,37152.4769749763,East Asia & Pacific
-Bhutan,BTN,,South Asia
 Botswana,BWA,7738.87880407803,Sub-Saharan Africa
 Central African Republic,CAF,427.058096191269,Sub-Saharan Africa
 Canada,CAN,54917.6625226262,North America
 Switzerland,CHE,93259.9057183024,Europe & Central Asia
-Channel Islands,CHI,,Europe & Central Asia
 Chile,CHL,15355.4797401048,Latin America & Caribbean
 China,CHN,12720.2163182363,East Asia & Pacific
 Cote d'Ivoire,CIV,2486.41219394248,Sub-Saharan Africa
@@ -57,7 +54,6 @@ Dominican Republic,DOM,10111.2457110261,Latin America & Caribbean
 Algeria,DZA,4342.63796796522,Middle East & North Africa
 Ecuador,ECU,6391.28248430643,Latin America & Caribbean
 "Egypt, Arab Rep.",EGY,4295.40749561014,Middle East & North Africa
-Eritrea,ERI,,Sub-Saharan Africa
 Spain,ESP,29674.5442864413,Europe & Central Asia
 Estonia,EST,28247.095992497,Europe & Central Asia
 Ethiopia,ETH,1027.58591095964,Sub-Saharan Africa
@@ -70,16 +66,13 @@ Gabon,GAB,8820.34733682316,Sub-Saharan Africa
 United Kingdom,GBR,46125.2557513568,Europe & Central Asia
 Georgia,GEO,6674.95695994589,Europe & Central Asia
 Ghana,GHA,2203.55893518303,Sub-Saharan Africa
-Gibraltar,GIB,,Europe & Central Asia
 Guinea,GIN,1515.16794777584,Sub-Saharan Africa
 "Gambia, The",GMB,808.278281490135,Sub-Saharan Africa
 Guinea-Bissau,GNB,775.828965745365,Sub-Saharan Africa
 Equatorial Guinea,GNQ,7182.26538205027,Sub-Saharan Africa
 Greece,GRC,20867.2690861087,Europe & Central Asia
 Grenada,GRD,9689.08269960317,Latin America & Caribbean
-Greenland,GRL,,Europe & Central Asia
 Guatemala,GTM,5473.20856444589,Latin America & Caribbean
-Guam,GUM,,East Asia & Pacific
 Guyana,GUY,18199.4748396968,Latin America & Caribbean
 "Hong Kong SAR, China",HKG,48983.6217162934,East Asia & Pacific
 Honduras,HND,3040.17304596842,Latin America & Caribbean
@@ -87,7 +80,6 @@ Croatia,HRV,18570.4039968345,Europe & Central Asia
 Haiti,HTI,1748.25713229469,Latin America & Caribbean
 Hungary,HUN,18390.1849993244,Europe & Central Asia
 Indonesia,IDN,4787.99930771921,East Asia & Pacific
-Isle of Man,IMN,,Europe & Central Asia
 India,IND,2410.88802070689,South Asia
 Ireland,IRL,103983.29133582,Europe & Central Asia
 "Iran, Islamic Rep.",IRN,4669.57137993878,Middle East & North Africa
@@ -107,18 +99,15 @@ St. Kitts and Nevis,KNA,20262.2671364514,Latin America & Caribbean
 "Korea, Rep.",KOR,32422.5744864287,East Asia & Pacific
 Kuwait,KWT,41079.5226998138,Middle East & North Africa
 Lao PDR,LAO,2054.43078086496,East Asia & Pacific
-Lebanon,LBN,,Middle East & North Africa
 Liberia,LBR,754.532842914744,Sub-Saharan Africa
 Libya,LBY,6716.09598462328,Middle East & North Africa
 St. Lucia,LCA,13030.9284804245,Latin America & Caribbean
-Liechtenstein,LIE,,Europe & Central Asia
 Sri Lanka,LKA,3354.38340757565,South Asia
 Lesotho,LSO,969.935760159406,Sub-Saharan Africa
 Lithuania,LTU,25064.808914729,Europe & Central Asia
 Luxembourg,LUX,125006.021815486,Europe & Central Asia
 Latvia,LVA,21779.5042572825,Europe & Central Asia
 "Macao SAR, China",MAC,34584.8590938779,East Asia & Pacific
-St. Martin (French part),MAF,,Latin America & Caribbean
 Morocco,MAR,3441.99145507813,Middle East & North Africa
 Monaco,MCO,240862.18244774,Europe & Central Asia
 Moldova,MDA,5714.43048840294,Europe & Central Asia
@@ -132,7 +121,6 @@ Malta,MLT,34127.5105566356,Middle East & North Africa
 Myanmar,MMR,1149.21121846296,East Asia & Pacific
 Montenegro,MNE,10093.4387007266,Europe & Central Asia
 Mongolia,MNG,5045.50470031666,East Asia & Pacific
-Northern Mariana Islands,MNP,,East Asia & Pacific
 Mozambique,MOZ,558.298606448221,Sub-Saharan Africa
 Mauritania,MRT,2065.15551570106,Sub-Saharan Africa
 Mauritius,MUS,10256.2303053576,Sub-Saharan Africa
@@ -153,11 +141,9 @@ Pakistan,PAK,1588.8798287911,South Asia
 Panama,PAN,17357.628633794,Latin America & Caribbean
 Peru,PER,7125.82993135746,Latin America & Caribbean
 Philippines,PHL,3498.5098055874,East Asia & Pacific
-Palau,PLW,,East Asia & Pacific
 Papua New Guinea,PNG,3115.92292304288,East Asia & Pacific
 Poland,POL,18688.0044867103,Europe & Central Asia
 Puerto Rico,PRI,35208.6371888414,Latin America & Caribbean
-"Korea, Dem. People's Rep.",PRK,,East Asia & Pacific
 Portugal,PRT,24515.2658507319,Europe & Central Asia
 Paraguay,PRY,6153.05565720044,Latin America & Caribbean
 West Bank and Gaza,PSE,3789.32796575153,Middle East & North Africa
@@ -173,10 +159,8 @@ Singapore,SGP,82807.6290622897,East Asia & Pacific
 Solomon Islands,SLB,2205.25180509148,East Asia & Pacific
 Sierra Leone,SLE,475.795727844622,Sub-Saharan Africa
 El Salvador,SLV,5127.32166823012,Latin America & Caribbean
-San Marino,SMR,,Europe & Central Asia
 Somalia,SOM,592.103121972088,Sub-Saharan Africa
 Serbia,SRB,9537.68286673128,Europe & Central Asia
-South Sudan,SSD,,Sub-Saharan Africa
 Sao Tome and Principe,STP,2386.6961758184,Sub-Saharan Africa
 Suriname,SUR,5858.82466074423,Latin America & Caribbean
 Slovak Republic,SVK,21256.8084273666,Europe & Central Asia
@@ -185,7 +169,6 @@ Sweden,SWE,56373.7885792007,Europe & Central Asia
 Eswatini,SWZ,3986.88663743798,Sub-Saharan Africa
 Sint Maarten (Dutch part),SXM,35873.0564894806,Latin America & Caribbean
 Seychelles,SYC,13250.4558332375,Sub-Saharan Africa
-Syrian Arab Republic,SYR,,Middle East & North Africa
 Turks and Caicos Islands,TCA,24917.595805527,Latin America & Caribbean
 Chad,TCD,716.804381134584,Sub-Saharan Africa
 Togo,TGO,942.649901579536,Sub-Saharan Africa
@@ -193,7 +176,6 @@ Thailand,THA,6909.9562847948,East Asia & Pacific
 Tajikistan,TJK,1054.18948358818,Europe & Central Asia
 Turkmenistan,TKM,8792.5485039672,Europe & Central Asia
 Timor-Leste,TLS,2389.2958750343,East Asia & Pacific
-Tonga,TON,,East Asia & Pacific
 Trinidad and Tobago,TTO,19629.4653400829,Latin America & Caribbean
 Tunisia,TUN,3747.41939149283,Middle East & North Africa
 Turkiye,TUR,10674.5041731531,Europe & Central Asia
@@ -205,9 +187,6 @@ Uruguay,URY,20795.0423535553,Latin America & Caribbean
 United States,USA,76329.5822652029,North America
 Uzbekistan,UZB,2255.15115496772,Europe & Central Asia
 St. Vincent and the Grenadines,VCT,9125.32477064743,Latin America & Caribbean
-"Venezuela, RB",VEN,,Latin America & Caribbean
-British Virgin Islands,VGB,,Latin America & Caribbean
-Virgin Islands (U.S.),VIR,,Latin America & Caribbean
 Viet Nam,VNM,4163.51429874522,East Asia & Pacific
 Vanuatu,VUT,3231.35129995571,East Asia & Pacific
 Samoa,WSM,3745.56036746313,East Asia & Pacific
