@@ -45,9 +45,7 @@ $$
 
 - La mejor recta sera la que minimice la suma de los residuos al cuadrado
 
-  $$
-  g(a,b) = \sum_{i=1}^{n}(Y_i - (b+m*X_i))^2
-  $$
+  $$g(a,b) = \sum_{i=1}^{n}(Y_i - (b+m*X_i))^2$$
 
   - Al ser una funcion cuadratica de los parametros, tiene un minimo global que ademas es el unico minimo local
 
@@ -69,9 +67,7 @@ Cuantificando la varianza
 
 - Coeficiente de determinacion (R^2): Mide la proporcion de variabilidad de la variable respuesta explicada por variaciones en x, es decir por el modelo de regresion
 
-  $$
-  R^2 = \frac{SCexplic}{SCtotal}
-  $$
+  $$R^2 = \frac{SCexplic}{SCtotal}$$
 
   - es una medida de la capacidad predictiva del modelo (RLS)
 
