@@ -45,11 +45,11 @@ $$
 
 - La mejor recta sera la que minimice la suma de los residuos al cuadrado
 
-  $$g(a,b) = \sum_{i=1}^{n}(Y_i - (b+m*X_i))^2$$
+$$g(a,b) = \sum_{i=1}^{n}(Y_i - (b+m*X_i))^2$$
 
-  - Al ser una funcion cuadratica de los parametros, tiene un minimo global que ademas es el unico minimo local
+- Al ser una funcion cuadratica de los parametros, tiene un minimo global que ademas es el unico minimo local
 
-  - Lo podemos hallar buscando donde se anula el gradiente -> $\nabla(m,b) = 0$
+- Lo podemos hallar buscando donde se anula el gradiente -> $\nabla(m,b) = 0$
 
 ## Prediccion
 
