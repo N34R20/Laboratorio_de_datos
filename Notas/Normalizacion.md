@@ -111,13 +111,42 @@ Tecnicas para alcanzar 1FN
 
 ### 2FN
 
+Definicion general : Un esquema R esta en 2FN si todo atributo no primo de A de R no depende paricalmente (de manera funcional) de niguna clave de R
+
+Definicion alternativa : Un esquema R esta en 2FN si todo atributo no primo de A de R depende completamente (de manera funcional) de todas las claves de R
+
 ### 3FN
 
+Definicion general : Un esquema R esta en 3FN si, para toda dependencia funcional _no trivial_ X -> A de R, se cumple alguna de las siguientes condiciones:
+
+- X es SK de R
+- A es atributo primo de R
+
+DF trivial: La DF A -> B es trivial si B es un subconjunto de atrbutos de A.
+Ej: A -> A es una DF trivial
+
+Admite Redundancia
+
 ### BCFN
+
+Definicion: Un esquema R esta en BCFN si, para toda dependencia funcional _no trivial_ X -> A de R, X es SK de R
+
+BCFN vs 3FN: BCFN es mas restrictiva que 3FN ya que BCFN no permite que A sea primo
 
 ## introduccion
 
 ### Inferencia
+
+Reglas de inferencia:
+
+"Axiomas de Armstrong"
+
+- Rl1 (regla reflexiva): Si $Y \subseteq X$ Entonces $X \rightarrow Y$
+- Rl2 (regla de incremento) {$X \rightarrow Y$} $\models XZ \rightarrow YZ$
+- Rl3 (regla transitiva) {$X \rightarrow Y, Y \rightarrow Z$} $\models X \rightarrow Z$
+- Rl4 (regla de descomposicion o proyeccion)
+- Rl5 (regla de union o aditiva)
+- Rl6 (regla de pseudotransitiva)
 
 ### Clausura y equivalencia
 
@@ -125,14 +154,54 @@ Tecnicas para alcanzar 1FN
 
 ## Propiedades de la Descomposicion
 
+Descomposicion: Es la descomoposicion de R en un conjunto de esquemas D={$R_1, R_2, ..., R_m$} de R
+
+Propiedad deseable Nro 1: Se desea preservacion de atributos
+
+$$
+\bigcup_{i=1}^{m} R_i = R
+$$
+
 ### Preservacion de atributos
 
 ### Preservacion de DFs
 
+Propiedad deseable Nro 2: Si X -> Y en F, es deseable que o bien aparezca en algun esquema $R_i$ de D o bien pueda ser inferida de ls DFs de algun esquema $R_i$
+
+Importante:
+
+Proyeccion:
+
+Preservacion de DFs:
+
 ### Lossless Join
+
+- **Lossless Join informalmente**: El cumplimiento de esta propiedad no permite la generacion de tuplas espureas cuando se realiza un NATURAL JOIN entre las relaciones resultantes de una descomposicion
+
+- **Lossless Join formalmente**: Una descomposicion D={$R_1, R_2, ..., R_m$} de R posee la propiedad **_lossless join_** con respecto al conjutno de DFs de R si, para todo estado r(R) que satisface F, se cumple que $\bowtie(\pi_{R_1}(r), ...., \pi_{R_m}(r))=r$
 
 ## Algoritmos para el Diseño de Esquemas
 
 ### Algoritmo D1 - 3FN
+
+- **Algoritmo Nro. D1**: Descomposicion en 3FN
+
+Entrada: R universal y un conjunto de DFs F sobre R
+
+1. Hallar el cubrimiento minimal G de F (utilizar algoritmo ya dado)
+
+2. Para cada lado izquierdo X de cada DF que aparece en G
+   Crear una relacion D con atributos $\{ X\cup \{A_1 \} \cup \{A_2 \} \cup ... \cup \{A_k \}\}$, siendo $X\rightarrow A_1, X\rightarrow A_2, ..., X\rightarrow A_k,$ las unicas dependencias en G con X como lado izquierdo (X es la clave en esta relacion)
+
+3. Si ninguna relacion D contiene una clave R
+   Entonces crear una relacion adicional en D que contenga atributos que formen una clave de R (se puede utilizar algoritmo ya dado)
+
+4. Eliminar relaciones redundantes de D. Una relacion R de D es redundante si R es una proyeccion de otra relacion S de D.
+
+Descompone relacion universal R cumpliendo:
+
+- 3FN
+- Preservacion de DFs
+- Lossles Join
 
 ### Algoritmo D2 - BCFN
