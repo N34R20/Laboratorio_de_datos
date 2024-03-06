@@ -54,9 +54,25 @@ hiperparametros) D el “dataset’
 
 ## Busqueda del mejor modelo
 
+Para poder elegir un modelo final, es natural explorar distintas combinaciones de hiper-parámetros y distintos algoritmos de aprendizaje
+
 ## Seleccion de Modelos
 
 ## Proceso de seleccion de modelos
+
+- 1. Separo los datos en DEV y EVAL
+
+- 2. Con los datos en DEV
+
+  - a) Armo una grilla con lso hiperparametros a explotar para cada modelo
+
+  - b) Evaluar cada configuracion con cross-validation
+
+  - c) Tomo como modelo final
+
+- 3. Con los datos EVAL
+
+  - a) Calculo la performance del modelo
 
 # Metricas de performance
 
@@ -72,22 +88,57 @@ $$
 Accuarcy = \frac{InstanciasBienCalificadas}{TotalDeInstancias}
 $$
 
+¿Qué significa si me dicen: Mi modelo tiene accuracy del 80%?
+→ De 100 muestras 80 las clasificó bien
+
+No dice nada sobre el tipo de aciertos y errores que comete el modelo
+
 Tipos de error
 
-- **Falso Positivo**
+- **Falso Positivo**: Era negativo pero dijimos positivo
 
-- **Falso Negativo**
+- **Falso Negativo**: Era positivo pero dijimos negativo
+
+Matriz de confusion
+
+$$
+
+\begin{bmatrix}
+\text{TN} & \text{FP} \\
+\text{FN} & \text{TP}
+\end{bmatrix}
+
+
+$$
+
+#### Accuracy
 
 $$
 Accuarcy = \frac{TP + TN }{TP + TN + FP + FN}
 $$
 
+#### Precision
+
 $$
 Precision = \frac{TP}{TP + FP}
 $$
+
+De las instancias clasificadas como positivas, cuantas lo son (cuan utiles son los resultados de busqueda)
+
+#### Recall
 
 $$
 Recall = \frac{TP}{TP + FN}
 $$
 
-#Caso bianrio : F-score
+De las instancias positivas, cuantas fueron clasificadads como positivas (cuan completos son los resultados)
+
+#### Caso bianrio : F-score
+
+$$
+F_{\beta} = (1 + \beta^2) * \frac{precision * recall}{(\beta^2 * precision) + recall}
+$$
+
+#### Curvas ROC
+
+Grafico Recall vs False Positive Recall
