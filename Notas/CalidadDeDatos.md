@@ -110,10 +110,28 @@ Seguir una metodologia
 
 Objetivo: Determinar: - Datos criticos - Ciclo de vida del dato - Atributos de interes
 
-Tareas: - Identificar stakeholders - Conseguir compromiso por parte del clinete - Leer documentacion sobre los sistemas, sobre el negocio, y estudiar modelos de datos - Hacer cuestionarios tendientes a determinar cuales son los datos criticos, cual es el ciclo de vida del dato, cuales son los atributos de interes y los problemas habituales - Llevar adelante los cuestionarios con cada uno de los stakeholders
+Tareas:
+
+- Identificar stakeholders
+- Conseguir compromiso por parte del cliente
+- Leer documentacion sobre los sistemas, sobre el negocio, y estudiar modelos de datos
+- Hacer cuestionarios tendientes a determinar cuales son los datos criticos, cual es el ciclo de vida del dato, cuales son los atributos de interes y los problemas habituales
+- Llevar adelante los cuestionarios con cada uno de los stakeholders
 
 ### 2. Elaborar metricas de calidad
 
+Para los datos criticos y los atributos de interes, armar metricas para cuantificar cuan grave es el problema
+
+Posible tecnica: **Goal Question Metric** (Objetivo, Pregunta, Metrica)
+
 ### GQM (Goal Question Metric)
 
+- **Goal (Objetivo)** -> Se define un objetivo
+
+- **Question (Pregunta)** -> Se plantea una pregunta (o mas), cuya respuesta permitira saber si se satisface el objetivo
+
+- **Metric (Metrica)** -> Se plantea una metricas (o mas) -para cada una de las pregutnas-, cuya ejecucion permitira responder las mismas
+
 ### 3. Recolectar valores
+
+Los valores de las metricas se pueden obtener a traves de consultas SQL
