@@ -132,7 +132,7 @@ Propiedades. Luego de proceso de normalizacion por descomposicion
 
 Preservacion de DF. Es deseable, pero en algunos casos es sacriﬁcada
 
-- **Super Clave (SK)**. Una SK de R = {$A_1, A_2, ..., A_n$} es un subconjunto de atributos $S\subseteq R$ con la propiedad de que no hay dos tuplas $t_1, t_2$ en un estado legal r(R) que cumplan $t_1(S)=t_2(S)$
+- **Super Clave (SK)**. Una SK de R = { $A_1, A_2, ..., A_n$ } es un subconjunto de atributos $S\subseteq R$ con la propiedad de que no hay dos tuplas $t_1, t_2$ en un estado legal r(R) que cumplan $t_1(S)=t_2(S)$
 
 - **Clave (K)**. Una clave K es una SK con la propiedad adicional de que al remover cualquier atributo de K, deja de ser SK. Es decir, K es una SK _minimal_.
 
