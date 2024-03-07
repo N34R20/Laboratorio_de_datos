@@ -9,7 +9,29 @@ INDICE:
 
 ## Introduccion
 
+- **Salida del Diseño** Conjunto de relaciones
+
+- **Calidad de Diseño** Necesidad de evaluar si una forma de agrupar atributos en un esquema es mejor que otra
+
+- **Niveles**
+
+  - **Logico (o Conceptual)**. Un buen diseño de esquemas a este nivel habilita a los usuarios a entender el significado de los datos de las relaciones
+
+  - **Implementacion (o de Almacenamiento Fisico)**. Como se almacenan y actualizan las tuplas
+
+- **Objetivos**
+
+  - **Preservar la Informacion**
+  - **Minimizar la Redundancia**
+
 ## Pautas de Diseño
+
+Cuatro pautas informales de diseño pueden utilizarse como medida para determinar la calidad de un diseño:
+
+1. Estar seguro que semantica de atributos en esquemas es clara
+2. Reducir la informacion redudante en tuplas
+3. Reducir la cantidad de valores NULL en tuplas
+4. Desabilitar la posibilidad de generar tuplas espureas
 
 ### Pauta Nro. 1 - Semantica
 
@@ -78,60 +100,120 @@ Si X es CK de R, entonces X → R.
 
 ## Formas Normales (FN) basadas en Clave Primaria (PK)
 
+- Definicion: La **forma normal** de una relacion refiere a la mayor forma normal alcanzada por ella
+
 - Se asume
 
-  -
-  -
+  - Se cuneta con el conjunto de DF para cada relacion
+  - Cada relacion tiene designada su Clave Primaria (PK)
 
 - Proceso de Normalizacion
 
-  -
-  -
+  - A cada esquema ejecutarle una serie de test para **certificar** que satisface una **forma normal**
 
 - Normalizacion de los datos
 
-  -
-  - -
-    -
-  -
-
-- Definicion
+  - Proceso de analizar los esquemas, basandose en DF y PK
+  - Objetivo: lograr propiedades deseables
+    - Minimizar redundancia
+    - Minimizar anomalias de insercion, delecion, y modificacion
+  - Esquemas que no pasan ciertos test de formas normales, se descomponen en esquemas mas pequeños que pasan el test (y sus propiedades)
 
 ### Introduccion
 
+Sin garantıa. Las formas normales, consideradas aisladas de otros factores, no garantizan un buen diseño de la BD
+
+Propiedades. Luego de proceso de normalizacion por descomposicion
+
+- Nonadditive Join (Lossless Join). Garantıa de que no ocurre problema de generacion de tuplas espureas
+
+- Preservacion de DF. Garantıa de que cada DF se encuentra representada en algun esquema resultante de la descomposicion
+  Lossless Join debe lograrse a cualquier costo
+
+Preservacion de DF. Es deseable, pero en algunos casos es sacriﬁcada
+
+- **Super Clave (SK)**. Una SK de R = {$A_1, A_2, ..., A_n$} es un subconjunto de atributos $S\subseteq R$ con la propiedad de que no hay dos tuplas $t_1, t_2$ en un estado legal r(R) que cumplan $t_1(S)=t_2(S)$
+
+- **Clave (K)**. Una clave K es una SK con la propiedad adicional de que al remover cualquier atributo de K, deja de ser SK. Es decir, K es una SK _minimal_.
+
+- **Clave Candidata (CK)**. Si un esquema posee mas de una clave, cada una de ellas se denominan clave candidata.
+
+- **Clave Primaria (PK)**. Una de las CK es designada arbitrariamente como PK
+
+- **Clave Secundaria**. CK que no es PK
+
+- **Atributo primo**. Atributo de un esquema R que pertenece a **alguna** CK de R
+
+- **Requisito**. En la practica, todos los esquemas deben poseer PK
+
+---
+
 ### 1FN
 
-Tecnicas para alcanzar 1FN
+- **Prohibe** relaciones dentro de relaciones o relaciones como valores de atributos dentro de tuplas.
+
+- **Admite**. El dominio de un atributo debe incluir solo valores atomicos (simples e indivisibles). En la tupla, puede tomar 1 solo valor del dominio.
+
+#### Tecnicas para alcanzar 1FN
+
+1. Remover atributo que viola 1FN y ubicarlo en una nueva relacion. La nueva relacion tiene como PK ambos atributos -> mejor solucion, no sufre de redundancia y es generica (no se limita a un maximo de valores posibles)
+
+**Recursividad**. La tecnica se puede utilizar recursivamente para multiples niveles
 
 ### 2FN
 
+- **DF Completa**. Una DF X → Y es Completa si al eliminar algun atributo A de X la DF deja de existir
+
+- **DF Parcial**. Una DF X → Y es Parcial si es posible eliminar algun atributo A de X y la DF continua existiendo
+
+Tips.
+
+- Para testear 2FN hay que veriﬁcar solo DFs cuyos lado izq. posean atributos que sean parte de la PK
+
+- Si la PK se compone de un solo atributo, entonces no es necesario realizar ningun test
+
+---
+
 ### 3FN
+
+- **Dependencia Transitiva**: Una DF $X \rightarrow Y$ en R es Transitiva, si existe un conjunto de atributos Z en R que no son ni Clave Candidata (CK) ni un subconjunto de alguna Clave de R, tal que
+  $X \rightarrow Z$ y $Z \rightarrow Y$
+
+Un esquema R esta en 3FN si esta en 2FN y ningun atributo no primo de R depende transitivamente de la PK
+
+---
 
 ## Definicion General de 2FN y 3Fn / BCFN
 
+- **2FN / 3FN**. Tienen en cuenta todas las claves candidatas
+
+- **1FN**. Modificacion no afecta a 1FN ya que es independiente de claves
+
+- **Atributo Primo**. Atributo que es parte de alguna CK
+
 ### 2FN
 
-Definicion general : Un esquema R esta en 2FN si todo atributo no primo de A de R no depende paricalmente (de manera funcional) de niguna clave de R
+**Definicion general** : Un esquema R esta en 2FN si todo atributo no primo de A de R no depende paricalmente (de manera funcional) de niguna clave de R
 
-Definicion alternativa : Un esquema R esta en 2FN si todo atributo no primo de A de R depende completamente (de manera funcional) de todas las claves de R
+**Definicion alternativa** : Un esquema R esta en 2FN si todo atributo no primo de A de R depende completamente (de manera funcional) de todas las claves de R
 
 ### 3FN
 
-Definicion general : Un esquema R esta en 3FN si, para toda dependencia funcional _no trivial_ X -> A de R, se cumple alguna de las siguientes condiciones:
+**Definicion general** : Un esquema R esta en 3FN si, para toda dependencia funcional _no trivial_ X -> A de R, se cumple alguna de las siguientes condiciones:
 
 - X es SK de R
 - A es atributo primo de R
 
-DF trivial: La DF A -> B es trivial si B es un subconjunto de atrbutos de A.
+**DF trivial**: La DF A -> B es trivial si B es un subconjunto de atrbutos de A.
 Ej: A -> A es una DF trivial
 
 Admite Redundancia
 
 ### BCFN
 
-Definicion: Un esquema R esta en BCFN si, para toda dependencia funcional _no trivial_ X -> A de R, X es SK de R
+**Definicion**: Un esquema R esta en BCFN si, para toda dependencia funcional _no trivial_ X -> A de R, X es SK de R
 
-BCFN vs 3FN: BCFN es mas restrictiva que 3FN ya que BCFN no permite que A sea primo
+**BCFN vs 3FN**: BCFN es mas restrictiva que 3FN ya que BCFN no permite que A sea primo
 
 ## introduccion
 
