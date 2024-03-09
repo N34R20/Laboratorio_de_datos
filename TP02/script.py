@@ -329,11 +329,11 @@ print("Arbol con mejores parametros:", "\n  Score con dataset de Train:", clf.be
 resultados_cvkf = clf.cv_results_
 
 # Creamos el modelo final con los mejores parametros encontrados
-arbol_final = DecisionTreeClassifier(criterion = mejores_parametros['criterion'],
+arbol_final_modelo = DecisionTreeClassifier(criterion = mejores_parametros['criterion'],
                                      max_depth = mejores_parametros['max_depth'])
 
 # Entrenamos el modelo final con TODO el dataset.
-arbol_final.fit(X, y)
+arbol_final = arbol_final_modelo.fit(X, y)
 
 #%%
 """
