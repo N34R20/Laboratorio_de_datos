@@ -6,6 +6,8 @@ Created on Wed Feb 28 15:47:12 2024
 @author: admin
 """
 
+#%%
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,9 +48,9 @@ df = map_labels_with_characters(characters=caracteres, df=df)
 print(df.head(10))
 print("\n")
 print(df.shape)
-"""
 
-Hay un totoal de 27455 imagenes y cada imagen esta compuesta por 784 pixeles -> 28^2 = 784
+"""
+Hay un total de 27455 imagenes y cada imagen esta compuesta por 784 pixeles -> 28^2 = 784
 """
 #%%
 
@@ -73,14 +75,39 @@ displayImg(images.iloc[rand:rand + 16].values, labels.iloc[rand:rand + 16].value
 
 print(df.character.value_counts())
 
-print(len(df[df.character == 'e']) / len(df[df.character == 'r']))
-
 #%%
 """
 a. ¿Cuáles parecen ser atributos relevantes para predecir la letra a la que 
 corresponde la seña? ¿Cuáles no? ¿Creen que se pueden descartar atributos?
 """
 
+promedios = np.zeros((24,784))
+X = [i for i in range(784)]
+#fig, ax = plt.subplots()
+fila = 0
+
+for num in range(26):
+    df_letra = df[df['label'] == num]
+    if df_letra.size > 0:
+        descripcion_letra = df_letra.describe()
+#print(descripcion_letra_a.iloc[2,1:])
+        promedios_letra = descripcion_letra.iloc[2,1:]
+        promedios[fila,:] = promedios_letra
+        fila += 1
+    #ax.plot(X, promedios_letra)
+
+#print(X)
+
+#%%
+desvios = []
+for i in range(784):
+    desvios.append(np.std(promedios[:,i]))
+print(desvios)
+
+#%%
+
+fig, ax = plt.subplots()
+ax.plot(X,desvios)
 
 
 #%%
@@ -89,6 +116,34 @@ b. ¿Hay señas que son parecidas entre sí?
 Por ejemplo, ¿Qué es más fácil de diferenciar: 
 la seña de la E, de la seña de la L o la seña de la E de la seña de la M?
 """
+
+X = [i for i in range(784)]
+
+letra_E = df[df['character']=='e']
+descripcion_letra_e = letra_E.describe()
+promedios_letra_e = descripcion_letra_e.iloc[2,1:] #tomamos la fila de promedios
+
+letra_L = df[df['character']=='l']
+descripcion_letra_l = letra_L.describe()
+promedios_letra_l = descripcion_letra_l.iloc[2,1:] #tomamos la fila de promedios
+
+letra_M = df[df['character']=='m']
+descripcion_letra_m = letra_M.describe()
+promedios_letra_m = descripcion_letra_m.iloc[2,1:] #tomamos la fila de promedios
+
+#fig,ax = plt.subplots()
+#ax.plot(X,promedios_letra_e)
+#ax.plot(X,promedios_letra_l)
+
+# la E y la L parecen tener señas similares, voy a comparar con la M
+
+fig,ax = plt.subplots()
+ax.plot(X,promedios_letra_e)
+ax.plot(X,promedios_letra_m)
+
+#print(promedios_letra_e)
+#print(promedios_letra_l)
+
 
 #%%
 """
@@ -107,8 +162,26 @@ for i in range(5):
     
 """
 Respuesta: En su mayoria si, cambia la forma de la mano en muchos casos, y la altura de la mano, 
-cosa que pueda confudnir un algoritmo al buscar pixeles especificos 
+cosa que pueda confundir un algoritmo al buscar pixeles especificos 
 """
+
+#LO DE ARRIBA ES DE FRAN, HAGO OTRA COSA ABAJO PORQUE HAY QUE JUSTIFICAR LO DICHO CON GRÁFICOS
+
+#%%
+
+letra_C = df[df['character']=='c']
+"""
+descripcion_letra_c = letra_C.describe()
+print(descripcion_letra_c)
+desvios_c = descripcion_letra_c.iloc[2,1:]
+"""
+X = [i for i in range(784)]
+
+fig,ax = plt.subplots()
+filas = letra_C.iloc[:,0].size
+
+for i in range(10):
+    ax.plot(X,letra_C.iloc[i,:])
 #%%
 """
 d. Este dataset está compuesto por imágenes, 
@@ -119,7 +192,7 @@ esto plantea una diferencia frente a los datos que utilizamos en las clases
 """
 Respuesta: Si, la complica, sobretodo porque los datos al ser no estructurados 
 no tienen atributos especificos,con lo cual las caracteristicas 
-son simplemente el gardiente de los pixeles individuales.
+son simplemente el gradiente de los pixeles individuales.
 """
 
 #%%
@@ -147,11 +220,10 @@ clf = KNeighborsClassifier(n_neighbors=3)
 print(clf)
 #%%
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score, recall_score, precision_score
 
 grid = GridSearchCV(LinearSVC(dual="auto"), param_grid={'C': [1, 10]},scoring=ftwo_scorer, cv=5)
 clf.fit(X_train, y_train)
-
-from sklearn.metrics import accuracy_score, recall_score, precision_score
 
 
 
