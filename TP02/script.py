@@ -264,9 +264,9 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Utilizamos Manual Search para analizar tres profundidades distintas 
 
-arbol1 = DecisionTreeClassifier(max_depth = 8)
-arbol2 = DecisionTreeClassifier(max_depth = 13)
-arbol3 = DecisionTreeClassifier(max_depth = 18)
+arbol1 = DecisionTreeClassifier(max_depth = 6)
+arbol2 = DecisionTreeClassifier(max_depth = 11)
+arbol3 = DecisionTreeClassifier(max_depth = 16)
 
 # Entrenamos los modelos
 
@@ -287,11 +287,11 @@ score_test_3 = arbol3.score(X_test, y_test)
 
 # Printeamos el score de cada modelos para poder compararlos
 
-print("Arbol con max_depth = 8:", "\n  Score con dataset de Train: ", score_train_1,
+print("Arbol con max_depth = 6:", "\n  Score con dataset de Train: ", score_train_1,
       "\n  Score con dataset de Test: ", score_test_1)
-print("Arbol con max_depth = 13:", "\n  Score con dataset de Train: ", score_train_2,
+print("Arbol con max_depth = 11:", "\n  Score con dataset de Train: ", score_train_2,
       "\n  Score con dataset de Test: ", score_test_2)
-print("Arbol con max_depth = 18:", "\n  Score con dataset de Train: ", score_train_3,
+print("Arbol con max_depth = 16:", "\n  Score con dataset de Train: ", score_train_3,
       "\n  Score con dataset de Test: ", score_test_3)
 
 #%%
@@ -308,7 +308,7 @@ arbol_cv = DecisionTreeClassifier()
 
 # Definimos que hiperparametros vamos a probar utilizando Grid Search
 hyper_params = {'criterion' : ["gini", "entropy"],
-                'max_depth' : [i for i in range(8,18,1)]}
+                'max_depth' : [i for i in range(6,16,1)]}
 
 # Creamos los modelos que vamos a entrenar con sus respectivos hiperparametros y
 # utilizando 5 StratifiedKFolds
