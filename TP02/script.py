@@ -260,27 +260,80 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 """
 b. Ajustar un modelo de árbol de decisión. Analizar distintas profundidades.
 """
-
 from sklearn.tree import DecisionTreeClassifier
+
+# Utilizamos Manual Search para analizar tres profundidades distintas 
+
+arbol1 = DecisionTreeClassifier(max_depth = 8)
+arbol2 = DecisionTreeClassifier(max_depth = 13)
+arbol3 = DecisionTreeClassifier(max_depth = 18)
+
+# Entrenamos los modelos
+
+arbol1.fit(X_train, y_train)
+arbol2.fit(X_train, y_train)
+arbol3.fit(X_train, y_train)
+
+# Calculamos el score para cada modelo
+
+score_train_1 = arbol1.score(X_train, y_train)
+score_test_1 = arbol1.score(X_test, y_test)
+
+score_train_2 = arbol2.score(X_train, y_train)
+score_test_2 = arbol2.score(X_test, y_test)
+
+score_train_3 = arbol3.score(X_train, y_train)
+score_test_3 = arbol3.score(X_test, y_test)
+
+# Printeamos el score de cada modelos para poder compararlos
+
+print("Arbol con max_depth = 8:", "\n  Score con dataset de Train: ", score_train_1,
+      "\n  Score con dataset de Test: ", score_test_1)
+print("Arbol con max_depth = 13:", "\n  Score con dataset de Train: ", score_train_2,
+      "\n  Score con dataset de Test: ", score_test_2)
+print("Arbol con max_depth = 18:", "\n  Score con dataset de Train: ", score_train_3,
+      "\n  Score con dataset de Test: ", score_test_3)
+
 #%%
 """
 c. Para comparar y seleccionar los árboles de decisión,
 utilizar validación cruzada con k-folding.
 Importante: Para hacer k-folding utilizar los datos del conjunto de train.
 """
+from sklearn.model_selection import GridSearchCV
 
-from sklearn.model_selection import cross_val_score
+# Creamos un arbol de decisión
+arbol_cv = DecisionTreeClassifier()
 
-# Paso 1: Crear el clasificador de árbol de decisión
-clf = DecisionTreeClassifier(random_state=42)
 
-# Paso 2: Realizar validación cruzada con k-fold
-k = 5  # Número de folds
-scores = cross_val_score(clf, X, y, cv=k)
+# Definimos que hiperparametros vamos a probar utilizando Grid Search
+hyper_params = {'criterion' : ["gini", "entropy"],
+                'max_depth' : [i for i in range(8,18,1)]}
 
-# Paso 3: Calcular la precisión promedio y la desviación estándar de las puntuaciones
-mean_accuracy = np.mean(scores)
-std_accuracy = np.std(scores)
+# Creamos los modelos que vamos a entrenar con sus respectivos hiperparametros y
+# utilizando 5 StratifiedKFolds
+clf = GridSearchCV(arbol_cv, hyper_params, cv = 5)
+
+# Entrenamos los modelos
+clf.fit(X_train, y_train)
+
+# Asignamos y printeamos los mejores parametros encontrados
+mejores_parametros = clf.best_params_
+print("Mejores parametros encontrados: ", mejores_parametros)
+
+# Calculamos el score del mejor modelo encontrado
+print("Arbol con mejores parametros:", "\n  Score con dataset de Train:", clf.best_score_,
+      "\n  Score con dataset de Test: ", clf.best_estimator_.score(X_test, y_test))
+
+# Asignamos los resultados de K-Fold Cross Validation
+resultados_cvkf = clf.cv_results_
+
+# Creamos el modelo final con los mejores parametros encontrados
+arbol_final = DecisionTreeClassifier(criterion = mejores_parametros['criterion'],
+                                     max_depth = mejores_parametros['max_depth'])
+
+# Entrenamos el modelo final con TODO el dataset.
+arbol_final.fit(X, y)
 
 #%%
 """
