@@ -191,7 +191,7 @@ esto plantea una diferencia frente a los datos que utilizamos en las clases
 
 """
 Respuesta: Si, la complica, sobretodo porque los datos al ser no estructurados 
-no tienen atributos especificos,con lo cual las caracteristicas 
+no tienen atributos especificos, con lo cual las caracteristicas 
 son simplemente el gradiente de los pixeles individuales.
 """
 
@@ -249,7 +249,7 @@ df_ej_3 = df[  (df['character'] == 'a')
              | (df['character'] == 'u')]
 
 print(df_ej_3.character.value_counts())
-#split dataset
+#sSplit del dataset
 from sklearn.model_selection import train_test_split
 X = df_ej_3.iloc[:,2:]
 y = df_ej_3.iloc[:, 0:1]
@@ -303,37 +303,19 @@ Importante: Para hacer k-folding utilizar los datos del conjunto de train.
 from sklearn.model_selection import GridSearchCV
 
 # Creamos un arbol de decisión
-arbol_cv = DecisionTreeClassifier()
+arbol_cv = DecisionTreeClassifier(random_state = 8)
 
 
 # Definimos que hiperparametros vamos a probar utilizando Grid Search
 hyper_params = {'criterion' : ["gini", "entropy"],
-                'max_depth' : [i for i in range(6,16,1)]}
+                'max_depth' : [i for i in range(6,17,1)]}
 
 # Creamos los modelos que vamos a entrenar con sus respectivos hiperparametros y
 # utilizando 5 StratifiedKFolds
-clf = GridSearchCV(arbol_cv, hyper_params, cv = 5)
+clf = GridSearchCV(arbol_cv, hyper_params, cv = 5, verbose = 2, return_train_score = True)
 
 # Entrenamos los modelos
 clf.fit(X_train, y_train)
-
-# Asignamos y printeamos los mejores parametros encontrados
-mejores_parametros = clf.best_params_
-print("Mejores parametros encontrados: ", mejores_parametros)
-
-# Calculamos el score del mejor modelo encontrado
-print("Arbol con mejores parametros:", "\n  Score con dataset de Train:", clf.best_score_,
-      "\n  Score con dataset de Test: ", clf.best_estimator_.score(X_test, y_test))
-
-# Asignamos los resultados de K-Fold Cross Validation
-resultados_cvkf = clf.cv_results_
-
-# Creamos el modelo final con los mejores parametros encontrados
-arbol_final_modelo = DecisionTreeClassifier(criterion = mejores_parametros['criterion'],
-                                     max_depth = mejores_parametros['max_depth'])
-
-# Entrenamos el modelo final con TODO el dataset.
-arbol_final = arbol_final_modelo.fit(X, y)
 
 #%%
 """
@@ -343,13 +325,45 @@ Reportar su mejor modelo en el informe.
 OBS: Al realizar la evaluación utilizar métricas de clasificación multiclase. 
 Además pueden realizar una matriz de confusión y evaluar los distintos tipos de errores para las clases.
 """
+import itertools
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
+# Asignamos y printeamos los mejores parametros encontrados con el Cross Validation
+mejores_parametros = clf.best_params_
+print("Mejores parametros encontrados: ", mejores_parametros)
 
+# Finalmente evaluamos el modelo con los mejores parametros
+# Calculamos el score
+print("Score del arbol con mejores parametros:", "\n  Score con dataset de Train:", clf.best_score_,
+      "\n  Score con dataset de Test: ", clf.best_estimator_.score(X_test, y_test))
 
+# Creamos una matriz confusion para visualizar el error por clase
+y_true = [i for i in y_test['character']]
+y_pred = clf.best_estimator_.predict(X_test)
+matriz_confusion = confusion_matrix(y_true, y_pred, labels=['a','e','i','o','u'])
 
+# Hacemos un plot para visualizarla
+disp = ConfusionMatrixDisplay(confusion_matrix=matriz_confusion,
+                              display_labels=clf.classes_)
 
+disp.plot()
+plt.show()
 
+# Asignamos el score a cada parametro del Cross Validation
+params = clf.cv_results_['params']
+score = clf.cv_results_['mean_test_score']
+for i in range(len(params)):
+    params[i]['score'] = score[i]
+resultados_cv = params
+# print("Lista de diccionarios con el score de cada modelo:", *resultados_cv, sep="\n  ")
+# Lo dejamos comentado para que no ensucie el output, pueden descomentarlo para
+# ver los resultados del Cross Validation
 
+# Creamos el modelo final con los mejores parametros encontrados
+arbol_final_modelo = DecisionTreeClassifier(criterion = mejores_parametros['criterion'],
+                                     max_depth = mejores_parametros['max_depth'])
 
-
+# Entrenamos el modelo final con TODO el dataset. Estimamos que su performance es igual
+# o ligeramente mejor por haberlo entrenado con un dataset ligeramente mas grande
+arbol_final = arbol_final_modelo.fit(X, y)
 
