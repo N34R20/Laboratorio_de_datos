@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.model_selection import train_test_split
 
 import string
 #%%
@@ -200,20 +201,46 @@ son simplemente el gradiente de los pixeles individuales.
 Ejercicio 2
 Dada una imagen se desea responder la siguiente pregunta: 
 ¿la imagen corresponde a una seña de la L o a una seña de la A?
-
 """
-
+#%%
+"""
+a. A partir del dataframe original, construir un nuevo dataframe que
+contenga sólo al subconjunto de imágenes correspondientes a señas
+de las letras L o A.
+"""
 df_ej_2 = df[(df['character'] == 'a') | (df['character'] == 'l')]
 
-print(df_ej_2.character.value_counts())
+#%%
+"""
+b. Sobre este subconjunto de datos, analizar cuántas muestras se tienen
+y determinar si está balanceado con respecto a las dos clases a
+predecir (la seña es de la letra L o de la letra A).
+"""
+# Printeamos las muestas de cada caracter y su proporcion sobre el total
+l_count = df_ej_2.character.value_counts()['l']
+a_count = df_ej_2.character.value_counts()['a']
+proporcion_l = l_count / (l_count + a_count)
+proporcion_a = a_count / (l_count + a_count)
+print("Cantidad de muestras 'L': ", l_count, " corresponde a ", "%.3f"%proporcion_l, " del dataset")
+print("Cantidad de muestras 'A': ", a_count, " corresponde a ", "%.3f"%proporcion_a, " del dataset")
 
-#split dataset
-from sklearn.model_selection import train_test_split
+# Consideramos que esta balanceado ya que casi hay un 50% de muestras de cada clase
+#%%
+"""
+c. Separar os datos en conjuntos de train y test.
+"""
+
 X = df_ej_2.iloc[:,2:]
-y = df_ej_2.iloc[:,1]
+y = df_ej_2.iloc[:, 0:1]
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=8)
 
+#%%
+"""
+d. Ajustar un modelo de KNN considerando pocos atributos, por ejemplo 3. 
+Probar con distintos conjuntos de 3 atributos y comparar resultados.
+Analizar utilizando otras cantidades de atributos.
+"""
 from sklearn.neighbors import KNeighborsClassifier
 clf = KNeighborsClassifier(n_neighbors=3)
 
@@ -249,6 +276,7 @@ df_ej_3 = df[  (df['character'] == 'a')
              | (df['character'] == 'u')]
 
 print(df_ej_3.character.value_counts())
+
 #sSplit del dataset
 from sklearn.model_selection import train_test_split
 X = df_ej_3.iloc[:,2:]
