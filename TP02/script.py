@@ -12,7 +12,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import random
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
 from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 
 import string
 #%%
@@ -241,11 +245,50 @@ d. Ajustar un modelo de KNN considerando pocos atributos, por ejemplo 3.
 Probar con distintos conjuntos de 3 atributos y comparar resultados.
 Analizar utilizando otras cantidades de atributos.
 """
-from sklearn.neighbors import KNeighborsClassifier
-clf = KNeighborsClassifier(n_neighbors=3)
+# Creamos el modelo de KNN con k = 3
+clf = KNeighborsClassifier(n_neighbors = 3)
 
-print(clf)
+resultados = []
+modelo = {}
+
+for i in range(10):
+    lista_numero_random = random.sample(range(1, 785), 3)
+    
+    atributo1 = 'pixel' + str(lista_numero_random[0])
+    atributo2 = 'pixel' + str(lista_numero_random[1])
+    atributo3 = 'pixel' + str(lista_numero_random[2])
+    
+    modelo['Atributo1'] = atributo1
+    modelo['Atributo2'] = atributo2
+    modelo['Atributo3'] = atributo3
+    
+    X_train_subset = X_train[[atributo1, atributo2, atributo3]]
+    
+    clf.fit(X_train, y_train.values.ravel())
+    clf.predict(X_test)
+    modelo['Precision_score'] = 
+precision_score(y_test, clf.predict(X_test))
+    modelo['Recall_score'] = 
+    recall_score(y_test, clf.predict(X_test))
+    modelo['R^2_score'] = clf.score(X_test, y_test)
+    
+    resultados.append(modelo)
+
+
+atributo4 = 'pixel' + str(lista_numero_random[3])
+atributo5 = 'pixel' + str(lista_numero_random[4])
+                          
+
+
+
 #%%
+"""
+e. Comparar modelos de KNN utilizando distintos atributos y distintos
+valores de k (vecinos). Para el análisis de los resultados, tener en
+cuenta las medidas de evaluación (por ejemplo, la exactitud) y la
+cantidad de atributos.
+"""
+
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, recall_score, precision_score
 
