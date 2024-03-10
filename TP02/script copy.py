@@ -275,7 +275,7 @@ y_pred = clf.predict(X_test)
 
 #accuracy = accuracy_score(y_test, y_pred)
 #precision = precision_score(y_test, y_pred)
-#recall = recall_score(y_test, y_pred)
+#recall = recall_score(y_test, y_pred, )
                             
 #print(f"La accuracy en el conjunto de test para el modelo KNN es: {accuracy} \n \
 #      La precision en el conjunto de test para el modelo KNN es: {precision} \n \

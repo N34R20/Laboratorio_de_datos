@@ -11,10 +11,9 @@ Created on Wed Feb 28 15:47:12 2024
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 import random
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
+from sklearn.metrics import accuracy_score, recall_score, precision_score
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -88,20 +87,19 @@ corresponde la seña? ¿Cuáles no? ¿Creen que se pueden descartar atributos?
 
 promedios = np.zeros((24,784))
 X = [i for i in range(784)]
-#fig, ax = plt.subplots()
+fig, ax = plt.subplots()
 fila = 0
 
 for num in range(26):
     df_letra = df[df['label'] == num]
     if df_letra.size > 0:
-        descripcion_letra = df_letra.describe()
+
 #print(descripcion_letra_a.iloc[2,1:])
-        promedios_letra = descripcion_letra.iloc[2,1:]
+        promedios_letra = df_letra.iloc[:,2:].mean()
         promedios[fila,:] = promedios_letra
         fila += 1
-    #ax.plot(X, promedios_letra)
+    ax.plot(X, promedios_letra)
 
-#print(X)
 
 #%%
 desvios = []
@@ -125,16 +123,16 @@ la seña de la E, de la seña de la L o la seña de la E de la seña de la M?
 X = [i for i in range(784)]
 
 letra_E = df[df['character']=='e']
-descripcion_letra_e = letra_E.describe()
-promedios_letra_e = descripcion_letra_e.iloc[2,1:] #tomamos la fila de promedios
+#descripcion_letra_e = letra_E.describe()
+promedios_letra_e = letra_E.iloc[:,2:].mean() #tomamos la fila de promedios
 
 letra_L = df[df['character']=='l']
-descripcion_letra_l = letra_L.describe()
-promedios_letra_l = descripcion_letra_l.iloc[2,1:] #tomamos la fila de promedios
+#descripcion_letra_l = letra_L.describe()
+promedios_letra_l = letra_L.iloc[:,2:].mean() #tomamos la fila de promedios
 
 letra_M = df[df['character']=='m']
-descripcion_letra_m = letra_M.describe()
-promedios_letra_m = descripcion_letra_m.iloc[2,1:] #tomamos la fila de promedios
+#descripcion_letra_m = letra_M.describe()
+promedios_letra_m = letra_M.iloc[:,2:].mean() #tomamos la fila de promedios
 
 #fig,ax = plt.subplots()
 #ax.plot(X,promedios_letra_e)
@@ -159,34 +157,14 @@ c. Tomen una de las clases, por ejemplo la seña correspondiente a la C,
 
 c_sign = df[df['character'] == 'c']
 
-print(c_sign.iloc[1,2:])
+images, labels = c_sign.iloc[0:8, 2:], c_sign['character']
 
-for i in range(5):
-    plt.imshow(np.reshape(c_sign.iloc[i,2:], (28, 28)), cmap = 'gray')
-    plt.show()
-    
+displayImg(images.values, labels.values)
+
 """
 Respuesta: En su mayoria si, cambia la forma de la mano en muchos casos, y la altura de la mano, 
 cosa que pueda confundir un algoritmo al buscar pixeles especificos 
 """
-
-#LO DE ARRIBA ES DE FRAN, HAGO OTRA COSA ABAJO PORQUE HAY QUE JUSTIFICAR LO DICHO CON GRÁFICOS
-
-#%%
-
-letra_C = df[df['character']=='c']
-"""
-descripcion_letra_c = letra_C.describe()
-print(descripcion_letra_c)
-desvios_c = descripcion_letra_c.iloc[2,1:]
-"""
-X = [i for i in range(784)]
-
-fig,ax = plt.subplots()
-filas = letra_C.iloc[:,0].size
-
-for i in range(10):
-    ax.plot(X,letra_C.iloc[i,:])
 #%%
 """
 d. Este dataset está compuesto por imágenes, 
@@ -229,6 +207,31 @@ print("Cantidad de muestras 'L': ", l_count, " corresponde a ", "%.3f"%proporcio
 print("Cantidad de muestras 'A': ", a_count, " corresponde a ", "%.3f"%proporcion_a, " del dataset")
 
 # Consideramos que esta balanceado ya que casi hay un 50% de muestras de cada clase
+
+#%%
+
+letra_A = df[df['character']=='a']
+#descripcion_letra_l = letra_L.describe()
+promedios_letra_a = letra_A.iloc[:,2:].mean() #tomamos la fila de promedios
+
+letra_L = df[df['character']=='l']
+#descripcion_letra_m = letra_M.describe()
+promedios_letra_l = letra_L.iloc[:,2:].mean()
+
+fig,ax = plt.subplots()
+ax.plot(X,promedios_letra_a)
+ax.plot(X,promedios_letra_l)
+
+#%%
+images_A, labels_A = letra_A.iloc[0:8, 2:], letra_A['character']
+
+displayImg(images_A.values, labels_A.values)
+
+#%%
+images_L, labels_L = letra_L.iloc[0:8, 2:], letra_L['character']
+
+displayImg(images_L.values, labels_L.values)
+
 #%%
 """
 c. Separar os datos en conjuntos de train y test.
@@ -266,19 +269,15 @@ for i in range(10):
     
     clf.fit(X_train, y_train.values.ravel())
     clf.predict(X_test)
-    modelo['Precision_score'] = 
-precision_score(y_test, clf.predict(X_test))
-    modelo['Recall_score'] = 
-    recall_score(y_test, clf.predict(X_test))
+    
+    modelo['Precision_score'] = precision_score(y_test, clf.predict(X_test),average='weighted')
+    modelo['Recall_score'] = recall_score(y_test, clf.predict(X_test),average='weighted')
     modelo['R^2_score'] = clf.score(X_test, y_test)
     
     resultados.append(modelo)
 
-
-atributo4 = 'pixel' + str(lista_numero_random[3])
-atributo5 = 'pixel' + str(lista_numero_random[4])
-                          
-
+#%%
+print(resultados)
 
 
 #%%
@@ -289,13 +288,44 @@ cuenta las medidas de evaluación (por ejemplo, la exactitud) y la
 cantidad de atributos.
 """
 
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import accuracy_score, recall_score, precision_score
+n_atributos = np.arange(1, 5, 1)
 
-grid = GridSearchCV(LinearSVC(dual="auto"), param_grid={'C': [1, 10]},scoring=ftwo_scorer, cv=5)
-clf.fit(X_train, y_train)
+n_neighbors = np.arange(1, 5, 1)
+
+train_score = {}
+test_score = {}
+
+for atributo in n_atributos:
+    train_score[atributo] = {}
+    test_score[atributo] = {}
+    
+    for neighbor in n_neighbors:
+
+        
+        X_train_subset = X_train.iloc[:, :atributo]
+        X_test_subset = X_test.iloc[:, :atributo]
+        
+        knn = KNeighborsClassifier(n_neighbors=neighbor)
+        knn.fit(X_train_subset, y_train)
+    
+        train_score[atributo][neighbor]=accuracy_score(y_train, knn.predict(X_train_subset))
+        test_score[atributo][neighbor]=accuracy_score(y_test, knn.predict(X_test_subset))
 
 
+#%%
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+for i, ax in enumerate(axs.flat):
+    ax.plot(n_neighbors, train_score[i+1].values(), label="Train Accuracy")
+    ax.plot(n_neighbors, test_score[i+1].values(), label="Test Accuracy")
+    ax.set_xlabel("Numero de K")
+    ax.set_ylabel("Accuracy")
+    ax.set_title(f"KNN (k={i+1}): Variando el número de vecinos")
+    ax.legend()
+    ax.grid()
+
+plt.tight_layout()
+plt.show()
 
 #%%
 """
@@ -331,7 +361,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 """
 b. Ajustar un modelo de árbol de decisión. Analizar distintas profundidades.
 """
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 # Utilizamos Manual Search para analizar tres profundidades distintas 
 
@@ -437,4 +467,35 @@ arbol_final_modelo = DecisionTreeClassifier(criterion = mejores_parametros['crit
 # Entrenamos el modelo final con TODO el dataset. Estimamos que su performance es igual
 # o ligeramente mejor por haberlo entrenado con un dataset ligeramente mas grande
 arbol_final = arbol_final_modelo.fit(X, y)
+
+#%%
+# Visualizar el árbol de decisiones
+plt.figure(figsize=(12, 8))
+plot_tree(arbol_final, feature_names = X.columns, filled=True, fontsize=10)
+fig = plt.figure(figsize=(15,7))
+plt.show()
+#%%
+# Visualizar la importancia de las características
+importances = arbol_final.feature_importances_
+importance_dict = dict()
+
+for i,v in enumerate(importances):
+ print('Feature: %0d, Score: %.5f' % (i,v))
+ importance_dict[i] = v
+
+num_zeros = sum(1 for valor in importance_dict.values() if valor == 0)
+
+print(f"Número de valores cero en el diccionario: {num_zeros}, de un total de {len(importance_dict)}")
+
+print(f"Eso queire decir que el mejor modelo segun el K-Fold no considera relevante el {(num_zeros/len(importance_dict)):.2f}% de la features")
+# plot feature importance
+plt.bar([x for x in range(len(importances))], importances)
+plt.show()
+
+
+
+#%%
+
+
+
 
