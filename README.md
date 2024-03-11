@@ -1,33 +1,26 @@
 # Laboratorio_de_datos
 
-## Notas de clases
+## [Notas de clases](Notas)
 
-- 
--
--
--
-
+- AlgebraRelacional
+- AR-SQL
+- CalidadDeDatos
+- ModeladoDeDatos
+- ModeloRelacional
+- Normalizacion
+- RegresionLineal
+- ArbolesDeDecision
+- EvaluacionDeModelos
+- AprendizajeNoSupervisado
 
 
 ## Trabajos practicos
 
-### TP-1 - PBI vs Sedes de Argentina en el exterior
+### [TP-1 - PBI vs Sedes de Argentina en el exterior](TP01)
 
 
-### TP-2 - MINST Sing Lenguage Dataset
+### [TP-2 - MINST Sing Lenguage Dataset](TP02)
 
-
-## Temas
-
-- #### Lenguaje de programacion para trabajar en nuestros proyectos (Python)
-
-- #### Etapas de un proyecto de Ciencias de Datos 
-
-- #### Modelado de Datos
-
-- #### Modelo Relacional
-
-- #### Algebra Relacional
 
 
 <details>
