@@ -1,8 +1,20 @@
 # Laboratorio_de_datos
 
-## Regimen de Aprobacion
+## Notas de clases
 
-NotaFinal = 0.6 * NotaParcial /10 + 0.2 * NotaTP1 + 0.2 * NotaTP2 + SI (PromedioTP >= 8) ENTONCES 1 SINO 0 
+- 
+-
+-
+-
+
+
+
+## Trabajos practicos
+
+### TP-1 - PBI vs Sedes de Argentina en el exterior
+
+
+### TP-2 - MINST Sing Lenguage Dataset
 
 
 ## Temas
