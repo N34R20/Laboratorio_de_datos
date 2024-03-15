@@ -23,8 +23,7 @@
 
 
 
-<details>
-<summary><i><b><h2>Bibliografia</h2></b></i></summary>
+## Bibliografia
 
 - Elements of Statistical Learning
     - https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf
@@ -38,4 +37,3 @@
 - Fundamentals of Database Systems
     - https://amirsmvt.github.io/Database/Static_files/Fundamental_of_Database_Systems.pdf
 
-</details>
